@@ -1,11 +1,11 @@
-import SectionPage from "../templates/section-page"
-import Logo from "./logo"
+import MenuItem from "./menu-item"
 
 export default function Menu() {
 	return (
-		<SectionPage className="flex justify-between">
-			<Logo />
-			<div>Itens menu</div>
-		</SectionPage>
+		<nav className="flex gap-5">
+			<MenuItem text="Início" link="#inicio" />
+			<MenuItem text="Vantagens" link="#highlights" />
+			<MenuItem text="Depoimentos" link="#depoimentos" />
+		</nav>
 	)
 }
