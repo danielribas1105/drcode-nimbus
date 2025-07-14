@@ -10,8 +10,8 @@ export default function Home() {
 			<Header />
 			<main className="flex flex-col gap-5 h-full">
 				<Slogan />
-				<Highlights />
 				<Advantage />
+				<Highlights />
 			</main>
 		</PageLayout>
 	)

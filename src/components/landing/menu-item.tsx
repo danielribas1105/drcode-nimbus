@@ -10,7 +10,7 @@ export default function MenuItem({ text, link, className }: MenuItemProps) {
 	return (
 		<Link
 			href={link}
-			className={`${className ?? "font-title font-bold text-lg hover:underline hover:decoration-4 hover:decoration-logo-green hover:underline-offset-8"}`}
+			className={`${className ?? "font-title font-bold uppercase text-lg text-logo-black hover:underline hover:decoration-4 hover:decoration-logo-green hover:underline-offset-8"}`}
 		>
 			{text}
 		</Link>

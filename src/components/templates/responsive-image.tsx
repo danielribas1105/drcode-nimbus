@@ -8,7 +8,7 @@ interface ResponsiveImageProps {
 export default function ResponsiveImage({ src, className }: ResponsiveImageProps) {
 	return (
 		<Image
-			src={src}
+			src={src ?? null}
 			alt="Imagem de marketing"
 			width={550}
 			height={365}

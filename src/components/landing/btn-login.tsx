@@ -1,4 +1,3 @@
-"use client"
 import { IconLogin2 } from "@tabler/icons-react"
 
 export default function BtnLogin() {
