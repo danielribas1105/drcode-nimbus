@@ -4,8 +4,8 @@ export default function Menu() {
 	return (
 		<nav className="flex gap-5">
 			<MenuItem text="Início" link="#inicio" />
-			<MenuItem text="Vantagens" link="#highlights" />
-			<MenuItem text="Depoimentos" link="#depoimentos" />
+			<MenuItem text="Vantagens" link="#advantage" />
+			<MenuItem text="Depoimentos" link="#testimonials" />
 		</nav>
 	)
 }

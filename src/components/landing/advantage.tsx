@@ -3,7 +3,7 @@ import SectionPage from "../templates/section-page"
 
 export default function Advantage() {
 	return (
-		<div id="highlight" className="bg-black/30 py-20">
+		<div id="advantage" className="bg-black/30 py-20">
 			<SectionPage className="flex flex-col gap-20">
 				<SectionContent
 					title="Gerenciador financeiro completo e simples de utilizar"
