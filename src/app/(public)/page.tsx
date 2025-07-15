@@ -7,14 +7,14 @@ import PageLayout from "@/components/templates/page-layout"
 
 export default function Home() {
 	return (
-		<PageLayout>
+		<PageLayout public>
 			<Header />
 			<main className="flex flex-col gap-5 h-full">
 				<Slogan />
 				<Advantage />
-				<Testimonials/>
+				<Testimonials />
 			</main>
-			<Footer/>
+			<Footer />
 		</PageLayout>
 	)
 }
