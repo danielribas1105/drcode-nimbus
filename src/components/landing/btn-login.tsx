@@ -1,8 +1,11 @@
 import { IconLogin2 } from "@tabler/icons-react"
+import { useRouter } from "next/navigation"
 
 export default function BtnLogin() {
+	const route = useRouter()
+
 	function login() {
-		window.location.href = "/finances"
+		route.push("/finances")
 	}
 
 	return (

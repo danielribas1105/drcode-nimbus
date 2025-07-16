@@ -5,6 +5,10 @@ import { IconArrowsRightLeft, IconLogout, IconUser } from "@tabler/icons-react"
 import Link from "next/link"
 
 export default function MenuUser() {
+	function logout() {
+		alert("Logout")
+	}
+
 	return (
 		<Menu shadow="md" width={200}>
 			<Menu.Target>
@@ -23,9 +27,12 @@ export default function MenuUser() {
 					<Menu.Item leftSection={<IconArrowsRightLeft size={16} />}>Finanças</Menu.Item>
 				</Link>
 				<Link href="/user">
-					<Menu.Item leftSection={<IconArrowsRightLeft size={16} />}>Usuário</Menu.Item>
+					<Menu.Item leftSection={<IconUser size={16} />}>Usuário</Menu.Item>
 				</Link>
 				<Menu.Divider />
+				<Menu.Item leftSection={<IconLogout size={16} color="#ff0000" />} onClick={logout}>
+					<span className="text-red-700">Sair</span>
+				</Menu.Item>
 			</Menu.Dropdown>
 		</Menu>
 	)
