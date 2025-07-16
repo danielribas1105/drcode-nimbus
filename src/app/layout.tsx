@@ -1,10 +1,7 @@
+import "@mantine/core/styles.css"
 import type { Metadata } from "next"
 import { Comfortaa, Roboto } from "next/font/google"
 import "./globals.css"
-import Home from "./(public)/page"
-import "@mantine/core/styles.css"
-import Finances from "./(private)/finances/page"
-import User from "./(private)/user/page"
 
 const confort = Comfortaa({
 	variable: "--font-confort",
@@ -30,11 +27,7 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang="pt-BR">
-			<body className={`${confort.variable} ${roboto.variable} antialiased`}>
-				{/* <Home /> */}
-				{/* <Finances /> */}
-				<User />
-			</body>
+			<body className={`${confort.variable} ${roboto.variable} antialiased`}>{children}</body>
 		</html>
 	)
 }

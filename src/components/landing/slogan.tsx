@@ -13,7 +13,7 @@ export default function Slogan() {
 	}
 
 	return (
-		<SectionPage className="md:flex h-screen mt-28 md:mt-0">
+		<SectionPage className="md:flex h-screen mt-28 md:mt-0 text-white">
 			<div className="flex flex-col flex-1 justify-center items-center gap-10">
 				<div className="font-title text-5xl text-center flex flex-col items-center gap-2">
 					<span>Controle fácil,</span>

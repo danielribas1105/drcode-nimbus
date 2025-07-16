@@ -19,7 +19,7 @@ export default function MenuUser() {
 
 			<Menu.Dropdown>
 				<Menu.Label>Usuário</Menu.Label>
-				<Link href="/">
+				<Link href="/finances">
 					<Menu.Item leftSection={<IconArrowsRightLeft size={16} />}>Finanças</Menu.Item>
 				</Link>
 				<Link href="/user">
