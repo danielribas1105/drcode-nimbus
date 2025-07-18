@@ -8,12 +8,16 @@ import Transation from "@/logic/core/finances/Transation"
 import { useState } from "react"
 
 export default function Finances() {
-	const [transations, setTransation] = useState<Transation[]>(transationsFake)
+	const [transations, setTransations] = useState<Transation[]>(transationsFake)
+	const [transation, setTransation] = useState<Transation | null>(null)
 	return (
 		<SectionPage>
 			<Content className="flex flex-col gap-5 justify-center">
-				<List transations={transations} />
-				<FormFinances transation={transations[0]}/>
+				{transation ? (
+					<FormFinances transation={transation} cancel={() => setTransation(null)} />
+				) : (
+					<List transations={transations} selectTransation={setTransation} />
+				)}
 			</Content>
 		</SectionPage>
 	)

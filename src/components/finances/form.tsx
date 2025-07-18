@@ -7,9 +7,10 @@ import "dayjs/locale/pt-br"
 
 interface FormFinancesProps {
 	transation: Transation
+	cancel?: () => void
 }
 
-export default function FormFinances({ transation }: FormFinancesProps) {
+export default function FormFinances({ transation, cancel }: FormFinancesProps) {
 	function changeAttribute(type: string) {}
 
 	return (
@@ -29,7 +30,7 @@ export default function FormFinances({ transation }: FormFinancesProps) {
 					<Button className="bg-green-500" color="green">
 						Salvar
 					</Button>
-					<Button className="bg-zinc-500" color="gray">
+					<Button className="bg-zinc-500" color="gray" onClick={cancel}>
 						Voltar
 					</Button>
 					{transation.id && (
