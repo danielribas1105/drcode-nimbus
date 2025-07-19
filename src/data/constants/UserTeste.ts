@@ -3,7 +3,7 @@ import User from "@/logic/core/user/User"
 
 const user: User[] = [
 	{
-		id: Id.novo(),
+		id: Id.newId(),
 		name: "Daniel Ribas",
 		email: "danielribas@gmail.com",
 		imageUrl: null,
