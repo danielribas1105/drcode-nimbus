@@ -14,7 +14,7 @@ interface FormFinancesProps {
 }
 
 export default function FormFinances({ transation, saveTrans, deleteTrans, cancel }: FormFinancesProps) {
-	const { transationData, setTransationData, changeAttribute } = useFormTransation(transation)
+	const { transationData, changeAttribute } = useFormTransation(transation)
 
 	return (
 		<div className="flex flex-col border border-zinc-500 bg-purple-900/50 rounded-xl overflow-hidden">
@@ -37,7 +37,7 @@ export default function FormFinances({ transation, saveTrans, deleteTrans, cance
 					valueFormat="DD/MM/YYYY"
 					onChange={changeAttribute('data')}
 				/>
-				<Radio.Group value={transationData.tipo} onChange={() => changeAttribute("tipo")}>
+				<Radio.Group value={transationData.tipo} onChange={changeAttribute("tipo")}>
 					<Group>
 						<Radio value={TransationType.RECEITA} label="Receita" />
 						<Radio value={TransationType.DESPESA} label="Despesa" />
