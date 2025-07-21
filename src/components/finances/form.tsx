@@ -5,7 +5,6 @@ import Money from "@/logic/utils/Money"
 import { TextInput, Radio, Group, Button } from "@mantine/core"
 import { DatePickerInput } from "@mantine/dates"
 import "dayjs/locale/pt-br"
-import { useState } from "react"
 
 interface FormFinancesProps {
 	transation: Transation
@@ -15,9 +14,7 @@ interface FormFinancesProps {
 }
 
 export default function FormFinances({ transation, saveTrans, deleteTrans, cancel }: FormFinancesProps) {
-	const { transationData, setTransationData } = useFormTransation(transation)
-
-	function changeAttribute(type: string) {}
+	const { transationData, setTransationData, changeAttribute } = useFormTransation(transation)
 
 	return (
 		<div className="flex flex-col border border-zinc-500 bg-purple-900/50 rounded-xl overflow-hidden">
@@ -26,28 +23,19 @@ export default function FormFinances({ transation, saveTrans, deleteTrans, cance
 				<TextInput
 					label="Descrição"
 					value={transationData.descricao}
-					onChange={(e) =>
-						setTransationData({
-							...transationData,
-							descricao: e.currentTarget.value,
-						})
-					}
+					onChange={changeAttribute('descricao')}
 				/>
 				<TextInput
 					label="Valor"
 					value={Money.formatMoney(transationData.valor)}
-					onChange={(e) =>
-						setTransationData({
-							...transationData,
-							valor: Money.desFormatMoney(e.currentTarget.value),
-						})
-					}
+					onChange={changeAttribute('valor', Money.desFormatMoney)}
 				/>
 				<DatePickerInput
 					label="Data"
 					value={transationData.data}
 					locale="pt-BR"
 					valueFormat="DD/MM/YYYY"
+					onChange={changeAttribute('data')}
 				/>
 				<Radio.Group value={transationData.tipo} onChange={() => changeAttribute("tipo")}>
 					<Group>

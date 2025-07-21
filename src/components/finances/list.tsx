@@ -24,7 +24,7 @@ export default function List({ transations, selectTransation }: ListProps) {
 							{t.tipo === "receita" ? <IconTrendingUp /> : <IconTrendingDown />}
 						</span>
 						<span className="w-full md:w-1/2">{t.descricao}</span>
-						<span className="hidden md:inline flex-1">{DateFormat.ddmmyy.format(t.data)}</span>
+						<span className="hidden md:inline flex-1">{DateFormat.ddmmyy.format(new Date(t.data))}</span>
 						<span>{Money.formatMoney(t.valor)}</span>
 					</div>
 				))
