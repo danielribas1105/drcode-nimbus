@@ -8,7 +8,7 @@ import { IconForms } from "@tabler/icons-react"
 export default function User() {
 	return (
 		<SectionPage>
-			<Content>
+			<Content className="gap-4">
 				<TitleSection
 					icon={<IconForms />}
 					main="Dados Cadastrais"

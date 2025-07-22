@@ -1,14 +1,42 @@
+'use client'
+import useFormTransation from "@/data/hooks/useFormTransation"
 import PartForm from "../templates/part-form"
+import userFake from "@/data/constants/UserTeste"
+import User from "@/logic/core/user/User"
+import { TextInput } from "@mantine/core"
+import { TextFormat } from "@/logic/utils/Text"
 
 export default function FormUser() {
+	const { transationData, changeAttribute} = useFormTransation<User>(userFake[0])
+
 	return (
-		<div>
+		<div className="flex flex-col gap-4">
 			<PartForm
 				title="Seu nome"
 				description="Esse é o nome usado em todas as apresentações"
-				msgFooter={""}
+				msgFooter="O nome deve possui entre 3 e 80 caracteres"
+				canSave={TextFormat.textName(transationData.nome, 3, 80)}
+				save={() => {}}
 			>
-				Useuário
+				<TextInput value={transationData.nome} onChange={changeAttribute('nome')}/>
+			</PartForm>
+			<PartForm
+				title="CPF"
+				description="O seu CPF é utilizado internamente pelo sistema"
+				msgFooter="Seu CPF é armazenado de forma segura"
+				canSave={false}
+				save={() => {}}
+			>
+				<TextInput value={TextFormat.cpfFormat(transationData.cpf)} onChange={changeAttribute('cpf', TextFormat.cpfUnformat)}/>
+			</PartForm>
+			<PartForm
+				title="Telefone"
+				description="Utilizamos apenas para notificações do sistema"
+				msgFooter="Não solicitamos nenhuma informação pelo telefone"
+				canSave={false}
+				save={() => {}}
+			>
+				<TextInput value={TextFormat.phoneFormat(transationData.telefone)} onChange={changeAttribute('telefone', TextFormat.phoneUnformat)}/>
 			</PartForm>
 		</div>
 	)

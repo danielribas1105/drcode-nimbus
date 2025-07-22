@@ -14,7 +14,7 @@ interface FormFinancesProps {
 }
 
 export default function FormFinances({ transation, saveTrans, deleteTrans, cancel }: FormFinancesProps) {
-	const { transationData, changeAttribute } = useFormTransation(transation)
+	const { transationData, changeAttribute } = useFormTransation<Transation>(transation)
 
 	return (
 		<div className="flex flex-col border border-zinc-500 bg-purple-900/50 rounded-xl overflow-hidden">

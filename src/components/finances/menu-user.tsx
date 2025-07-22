@@ -1,6 +1,6 @@
 "use client"
 import user from "@/data/constants/UserTeste"
-import { Avatar, Button, MantineProvider, Menu } from "@mantine/core"
+import { Avatar, Menu } from "@mantine/core"
 import { IconArrowsRightLeft, IconLogout, IconUser } from "@tabler/icons-react"
 import Link from "next/link"
 
