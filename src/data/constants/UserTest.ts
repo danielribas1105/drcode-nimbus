@@ -1,7 +1,7 @@
 import Id from "@/logic/core/shared/Id"
-import User from "@/logic/core/user/User"
+import UserNimbus from "@/logic/core/user/UserNimbus"
 
-const user: User[] = [
+const userTest: UserNimbus[] = [
 	{
 		id: Id.newId(),
 		nome: "Daniel Ribas",
@@ -12,4 +12,4 @@ const user: User[] = [
 	},
 ]
 
-export default user
+export default userTest

@@ -1,20 +1,27 @@
+"use client"
+import AuthenticationContext from "@/data/contexts/authentication-context"
 import { IconLogin2 } from "@tabler/icons-react"
 import { useRouter } from "next/navigation"
+import { useContext } from "react"
 
 export default function BtnLogin() {
-	const route = useRouter()
+	const { loginGoogle, loading } = useContext(AuthenticationContext)
 
-	function login() {
-		route.push("/finances")
+	const handleLogin = async () => {
+		const user = await loginGoogle()
+		// O redirecionamento já acontece no contexto
+		if (user) {
+			console.log("Login realizado com sucesso!")
+		}
 	}
 
 	return (
 		<button
 			className="flex items-center gap-2 font-title font-bold text-lg text-white px-3 py-1 bg-purple-800 hover:bg-purple-950 rounded-md"
-			onClick={login}
+			onClick={handleLogin}
 		>
 			<IconLogin2 />
-			Login
+			{loading ? "Fazendo login..." : "Entrar com Google"}
 		</button>
 	)
 }

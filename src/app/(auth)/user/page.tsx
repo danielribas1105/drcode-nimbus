@@ -2,7 +2,7 @@ import Content from "@/components/templates/content"
 import SectionPage from "@/components/templates/section-page"
 import FormUser from "@/components/user/form"
 import TitleSection from "@/components/user/title-section"
-import userFake from "@/data/constants/UserTeste"
+import userFake from "@/data/constants/UserTest"
 import { IconForms } from "@tabler/icons-react"
 
 export default function User() {

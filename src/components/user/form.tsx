@@ -1,13 +1,13 @@
-'use client'
+"use client"
 import useFormTransation from "@/data/hooks/useFormTransation"
 import PartForm from "../templates/part-form"
-import userFake from "@/data/constants/UserTeste"
-import User from "@/logic/core/user/User"
+import userFake from "@/data/constants/UserTest"
+import UserNimbus from "@/logic/core/user/UserNimbus"
 import { TextInput } from "@mantine/core"
 import { TextFormat } from "@/logic/utils/Text"
 
 export default function FormUser() {
-	const { transationData, changeAttribute} = useFormTransation<User>(userFake[0])
+	const { transationData, changeAttribute } = useFormTransation<UserNimbus>(userFake[0])
 
 	return (
 		<div className="flex flex-col gap-4">
@@ -18,7 +18,7 @@ export default function FormUser() {
 				canSave={TextFormat.textName(transationData.nome, 3, 80)}
 				save={() => {}}
 			>
-				<TextInput value={transationData.nome} onChange={changeAttribute('nome')}/>
+				<TextInput value={transationData.nome} onChange={changeAttribute("nome")} />
 			</PartForm>
 			<PartForm
 				title="CPF"
@@ -27,7 +27,10 @@ export default function FormUser() {
 				canSave={false}
 				save={() => {}}
 			>
-				<TextInput value={TextFormat.cpfFormat(transationData.cpf)} onChange={changeAttribute('cpf', TextFormat.cpfUnformat)}/>
+				<TextInput
+					value={TextFormat.cpfFormat(transationData.cpf)}
+					onChange={changeAttribute("cpf", TextFormat.cpfUnformat)}
+				/>
 			</PartForm>
 			<PartForm
 				title="Telefone"
@@ -36,7 +39,10 @@ export default function FormUser() {
 				canSave={false}
 				save={() => {}}
 			>
-				<TextInput value={TextFormat.phoneFormat(transationData.telefone)} onChange={changeAttribute('telefone', TextFormat.phoneUnformat)}/>
+				<TextInput
+					value={TextFormat.phoneFormat(transationData.telefone)}
+					onChange={changeAttribute("telefone", TextFormat.phoneUnformat)}
+				/>
 			</PartForm>
 		</div>
 	)

@@ -1,5 +1,5 @@
 "use client"
-import user from "@/data/constants/UserTeste"
+import userTest from "@/data/constants/UserTest"
 import { Avatar, Menu } from "@mantine/core"
 import { IconArrowsRightLeft, IconLogout, IconUser } from "@tabler/icons-react"
 import Link from "next/link"
@@ -14,10 +14,10 @@ export default function MenuUser() {
 			<Menu.Target>
 				<div className="flex items-center gap-3 cursor-pointer">
 					<div className="flex flex-col">
-						<span className="text-sm text-logo-black font-title font-bold">{user[0].name}</span>
-						<span className="text-xs text-logo-black/70">{user[0].email}</span>
+						<span className="text-sm text-logo-black font-title font-bold">{userTest[0].nome}</span>
+						<span className="text-xs text-logo-black/70">{userTest[0].email}</span>
 					</div>
-					<Avatar size={40} radius="xl" src={user[0]?.imageUrl ?? ""} />
+					<Avatar size={40} radius="xl" src={userTest[0]?.imageUrl ?? ""} />
 				</div>
 			</Menu.Target>
 

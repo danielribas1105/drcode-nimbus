@@ -1,7 +1,9 @@
+import { AuthenticationProvider } from "@/data/contexts/authentication-context"
 import "@mantine/core/styles.css"
 import type { Metadata } from "next"
 import { Comfortaa, Roboto } from "next/font/google"
 import "./globals.css"
+import { MantineProvider } from "@mantine/core"
 
 const confort = Comfortaa({
 	variable: "--font-confort",
@@ -27,7 +29,11 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang="pt-BR">
-			<body className={`${confort.variable} ${roboto.variable} antialiased`}>{children}</body>
+			<MantineProvider>
+				<AuthenticationProvider>
+					<body className={`${confort.variable} ${roboto.variable} antialiased`}>{children}</body>
+				</AuthenticationProvider>
+			</MantineProvider>
 		</html>
 	)
 }
