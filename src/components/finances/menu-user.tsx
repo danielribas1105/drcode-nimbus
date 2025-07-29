@@ -7,13 +7,10 @@ interface MenuUserProps {
 	userName: string | undefined
 	userEmail: string | undefined
 	userImage: string | null | undefined
+	onLogout: () => void
 }
 
-export default function MenuUser({ userName, userEmail, userImage }: MenuUserProps) {
-	function logout() {
-		alert("Logout")
-	}
-
+export default function MenuUser({ userName, userEmail, userImage, onLogout }: MenuUserProps) {
 	return (
 		<Menu shadow="md" width={200}>
 			<Menu.Target>
@@ -35,7 +32,7 @@ export default function MenuUser({ userName, userEmail, userImage }: MenuUserPro
 					<Menu.Item leftSection={<IconUser size={16} />}>Usuário</Menu.Item>
 				</Link>
 				<Menu.Divider />
-				<Menu.Item leftSection={<IconLogout size={16} color="#ff0000" />} onClick={logout}>
+				<Menu.Item leftSection={<IconLogout size={16} color="#ff0000" />} onClick={onLogout}>
 					<span className="text-red-700">Sair</span>
 				</Menu.Item>
 			</Menu.Dropdown>

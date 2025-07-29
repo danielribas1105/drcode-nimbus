@@ -6,16 +6,17 @@ import Welcome from "./welcome"
 import AuthenticationContext from "@/data/contexts/authentication-context"
 
 export default function HeaderFinances() {
-	const userGoogle = useContext(AuthenticationContext)
+	const { user, logout } = useContext(AuthenticationContext)
 
 	return (
 		<header className="bg-white/50 py-2">
 			<SectionPage className="flex justify-between items-center">
-				<Welcome userName={userGoogle.user?.nome.split(" ")[0]} />
+				<Welcome userName={user?.nome.split(" ")[0]} />
 				<MenuUser
-					userName={userGoogle.user?.nome}
-					userEmail={userGoogle.user?.email}
-					userImage={userGoogle.user?.imageUrl}
+					userName={user?.nome}
+					userEmail={user?.email}
+					userImage={user?.imageUrl}
+					onLogout={logout}
 				/>
 			</SectionPage>
 		</header>

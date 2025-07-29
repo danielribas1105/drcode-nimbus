@@ -1,7 +1,6 @@
 "use client"
 import AuthenticationContext from "@/data/contexts/authentication-context"
 import { IconLogin2 } from "@tabler/icons-react"
-import { useRouter } from "next/navigation"
 import { useContext } from "react"
 
 export default function BtnLogin() {

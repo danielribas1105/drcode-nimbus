@@ -2,7 +2,7 @@
 import UserNimbus from "@/logic/core/user/UserNimbus"
 import Authentication from "@/logic/firebase/auth/authentication"
 import { useRouter } from "next/navigation"
-import { createContext, useState } from "react"
+import { createContext, useEffect, useState } from "react"
 
 interface AuthenticationProps {
 	loading: boolean
@@ -19,10 +19,19 @@ const AuthenticationContext = createContext<AuthenticationProps>({
 })
 
 export function AuthenticationProvider(props: any) {
-	const [loading, setLoading] = useState<boolean>(false)
+	const [loading, setLoading] = useState<boolean>(true)
 	const [user, setUser] = useState<UserNimbus | null>(null)
 	const router = useRouter()
 	const authentication = new Authentication()
+
+	useEffect(() => {
+		const cancel = authentication.monitoring((user) => {
+			setUser(user)
+			setLoading(false)
+			router.push("/")
+		})
+		return () => cancel()
+	}, [])
 
 	async function loginGoogle() {
 		try {
